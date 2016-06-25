@@ -1,0 +1,5 @@
+sql: {
+    dialectOptions: {
+        instanceName: 'SQLEXPRESS'
+    }
+};

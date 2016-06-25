@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>repeatInside test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
+		<script src="repeatInside.js"></script>
+	</head>
+	<body ng-app="myApp" ng-controller="myController">
+		<h2>Iterating over a list</h2>
+		<dl bb-repeat-inside="word in dict">
+			<dt>{{word.name}}</dt>
+			<dd>{{word.description}} <a href="#" ng-click="removeAtIndex(index)">remove</a></dd>
+		</dl>
+		<p>
+			<label>add framework <input ng-model="framework"></label> <label>description: <input ng-model="frameworkdescription"></label> <button ng-click="dict.push({name:framework, description:frameworkdescription})">go!</button>
+		</p>
+		<h2>Iterating over an object</h2>
+		<div style="border:2px ridge black;background-color:#DDD;padding:20px;">
+			<h3>Price List</h3>
+			<div bb-repeat-inside="(product, price) in prices">
+				<strong ng-bind="product" style="width:100px;display:inline-block;"></strong> {{price | currency}}<br>
+			</div>
+		</div>
+	</body>
+	<script>
+	myApp = angular.module("myApp", ["bigblind"]);
+	
+	myApp.controller("myController",["$scope", function($scope){
+		$scope.dict = [
+			{name:"angular", description:"hero javascript framework"},
+			{name:"jQuery", description:"DOM made easy."}
+        ]
+
+		
+		$scope.removeAtIndex = function(index){
+			$scope.dict.splice(0,1);
+			console.log("----------------");
+			console.log($scope.dict);
+		};
+		$scope.prices = {
+			"bread": 1.95,
+			"milk": 1.92,
+			"angularjs": 0.00,
+		};
+	}]);
+	</script>
+
+</html>
