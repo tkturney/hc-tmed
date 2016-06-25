@@ -4,14 +4,6 @@
 
 module.exports = function(sequelize, DataTypes) {
   var TaskGroup = sequelize.define("TaskGroup", {
-    taskGroupID: {
-      field: "TaskGroupID",
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      unique: true,
-      autoIncrement: true
-    },
     name: {
       field: "Name",
       type: DataTypes.STRING,

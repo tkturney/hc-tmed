@@ -2,14 +2,6 @@
 
 module.exports = function(sequelize, DataTypes) {
   var TaskStep = sequelize.define("TaskStep", {
-    taskStepID: {
-      field: "TaskStepID",
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      unique: true,
-      autoIncrement: true
-    },
     name: {
       field: "Name",
       type: DataTypes.STRING,

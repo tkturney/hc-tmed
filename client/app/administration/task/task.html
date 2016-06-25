@@ -108,7 +108,7 @@
                   </div>
                   <div class="panel-body">
                     <select multiple ng-model="selectedGroups" style="width: 100%" size="7">
-                      <option ng-repeat="taskGroup in taskGroups" value="{{taskGroup.taskGroupID}}" ng-selected="{{selectedGroups.indexOf(taskGroup.taskGroupId.toString())!=-1}}">{{taskGroup.name}}</option>
+                      <option ng-repeat="taskGroup in taskGroups" value="{{taskGroup.id}}" ng-selected="{{selectedGroups.indexOf(taskGroup.taskGroupId.toString())!=-1}}">{{taskGroup.name}}</option>
                     </select>
                     <!-- <multiple-autocomplete ngModel="selectedGroups" object-property="name" suggestions-arr="taskGroups"></multiple-autocomplete> -->
                     <!-- <ul class="list-unstyled">
