@@ -83,7 +83,7 @@ angular.module('helpcard2App')
 
     $scope.updateTask = function(task) {
       task.modifiedBy = 'tkturney';
-      $http.put('/api/tasks/' + task.taskID, task);
+      $http.put('/api/tasks/' + task.id, task);
       setTimeout(function() {
         $scope.currentTask = task;
         $scope.editingTask = false;
@@ -96,7 +96,7 @@ angular.module('helpcard2App')
     }
 
     $scope.deleteTask = function(task) {
-      $http.delete('/api/tasks/' + task.taskID);
+      $http.delete('/api/tasks/' + task.id);
       setTimeout(function() {
         $scope.currentTask = '';
         refreshTasks();

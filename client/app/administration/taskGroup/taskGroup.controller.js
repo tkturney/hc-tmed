@@ -58,7 +58,7 @@ angular.module('helpcard2App')
 
     $scope.updateTaskGroup = function(taskGroup) {
       taskGroup.modifiedBy = 'tkturney';
-      $http.put('/api/taskGroups/' + taskGroup.taskGroupID, taskGroup);
+      $http.put('/api/taskGroups/' + taskGroup.id, taskGroup);
       setTimeout(function() {
         $scope.currentTaskGroup = taskGroup;
         $scope.editingTaskGroup = false;
@@ -67,7 +67,7 @@ angular.module('helpcard2App')
     };
 
     $scope.deleteTaskGroup = function(taskGroup) {
-      $http.delete('/api/taskGroups/' + taskGroup.taskGroupID)
+      $http.delete('/api/taskGroups/' + taskGroup.id)
       setTimeout(function() {
         $scope.currentTaskGroup = '';
         refreshTasks();

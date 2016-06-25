@@ -2,14 +2,6 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Resource = sequelize.define("Resource", {
-    resourceID: {
-      field: "ResourceID",
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      unique: true,
-      autoIncrement: true
-    },
     firstName: {
       field: "FirstName",
       type: DataTypes.STRING

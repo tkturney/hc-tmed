@@ -56,7 +56,7 @@ angular.module('helpcard2App')
 
     $scope.updateSchedule = function(schedule) {
       schedule.modifiedBy = 'tkturney';
-      $http.put('/api/schedules/' + schedule.scheduleID, schedule);
+      $http.put('/api/schedules/' + schedule.id, schedule);
       setTimeout(function() {
         $scope.currentSchedule = $scope.bufferSchedule;
         $scope.editingSchedule = false;
@@ -65,7 +65,7 @@ angular.module('helpcard2App')
     };
 
     $scope.deleteSchedule = function(schedule) {
-      $http.delete('/api/schedules/' + schedule.scheduleID);
+      $http.delete('/api/schedules/' + schedule.id);
       setTimeout(function() {
         $scope.currentSchedule = '';
         refreshTasks();
